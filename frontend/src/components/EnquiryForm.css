@@ -1,3 +1,35 @@
-.enquiry-form{
-    
+.enquiry-form {
+  padding: 1rem;
+}
+
+.form-text-input {
+  margin-bottom: 0.75rem;
+}
+
+.form-text-input input,
+textarea {
+  border-radius: 30px;
+  height: 50px;
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  background: #f5f2ff;
+}
+.form-textarea-input {
+  margin-bottom: 0.75rem;
+}
+
+.form-textarea-input textarea {
+  border-radius: 10px;
+  resize: none;
+  height: auto;
+}
+
+.btn {
+  background: #303371;
+  border: none;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 10px;
+  width: 40%;
 }

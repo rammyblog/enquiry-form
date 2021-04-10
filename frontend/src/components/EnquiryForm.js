@@ -55,9 +55,10 @@ const EnquiryForm = () => {
             name="message"
             onChange={handleFormChange}
             value={formDetails.message}
+            rows="3"
           />
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" className="btn" value="Submit" />
       </form>
     </div>
   );
