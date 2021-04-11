@@ -1,6 +1,8 @@
 import EnquiryForm from "./components/EnquiryForm";
 import "./App.css";
 import logo from "./assets/images/contact.jpg";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="app">
@@ -10,6 +12,7 @@ function App() {
           <img src={logo} alt="contact us" />
         </div>
         <EnquiryForm />
+        <ToastContainer />
       </div>
     </div>
   );
