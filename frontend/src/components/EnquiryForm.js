@@ -4,12 +4,13 @@ import { sendEmail } from "../api";
 import { toast } from "react-toastify";
 
 const EnquiryForm = () => {
-  const [formDetails, setFormDetails] = useState({
+  const initialValues = {
     name: "",
     email: "",
     subject: "",
     message: "",
-  });
+  };
+  const [formDetails, setFormDetails] = useState(initialValues);
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formDetails);
@@ -17,6 +18,7 @@ const EnquiryForm = () => {
 
     if (res === 200) {
       toast.success("🎉Your enquiry has been sent!");
+      setFormDetails(initialValues);
     } else {
       // console.log({ status });
       toast.error(`🤦${res}`);
