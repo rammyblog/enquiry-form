@@ -24,6 +24,12 @@
   text-transform: uppercase;
 }
 
-.enquiry-form {
-  width: 50%;
+@media (max-width: 790px) {
+  .app {
+    padding: 3rem;
+  }
+  .contact-container {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
 }

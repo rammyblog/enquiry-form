@@ -1,4 +1,4 @@
-import './EnquiryForm.css'
+import "./EnquiryForm.css";
 import { useState } from "react";
 
 const EnquiryForm = () => {
@@ -19,7 +19,7 @@ const EnquiryForm = () => {
   };
 
   return (
-    <div className='enquiry-form'>
+    <div className="enquiry-form">
       <form onSubmit={handleSubmit}>
         <div className="form-text-input">
           <input
@@ -28,6 +28,7 @@ const EnquiryForm = () => {
             name="name"
             onChange={handleFormChange}
             value={formDetails.name}
+            required
           />
         </div>
         <div className="form-text-input">
@@ -37,6 +38,7 @@ const EnquiryForm = () => {
             name="email"
             value={formDetails.email}
             onChange={handleFormChange}
+            required
           />
         </div>
         <div className="form-text-input">
@@ -46,6 +48,7 @@ const EnquiryForm = () => {
             name="subject"
             onChange={handleFormChange}
             value={formDetails.subject}
+            required
           />
         </div>
         <div className="form-textarea-input">
@@ -56,6 +59,7 @@ const EnquiryForm = () => {
             onChange={handleFormChange}
             value={formDetails.message}
             rows="3"
+            required
           />
         </div>
         <input type="submit" className="btn" value="Submit" />

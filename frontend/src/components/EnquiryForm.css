@@ -1,5 +1,6 @@
 .enquiry-form {
   padding: 1rem;
+  width: 50%;
 }
 
 .form-text-input {
@@ -32,4 +33,11 @@ textarea {
   padding: 0.75rem;
   border-radius: 10px;
   width: 40%;
+  cursor: pointer;
+}
+
+@media (max-width: 790px) {
+  .enquiry-form {
+    width: 100%;
+  }
 }
