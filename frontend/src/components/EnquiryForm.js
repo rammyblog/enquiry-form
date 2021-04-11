@@ -13,12 +13,13 @@ const EnquiryForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formDetails);
-    const status = await sendEmail(formDetails);
-    if (status === 200) {
+    const res = await sendEmail(formDetails);
+
+    if (res === 200) {
       toast.success("🎉Your enquiry has been sent!");
     } else {
-      console.log({ status });
-      toast.error(`🤦${status}`);
+      // console.log({ status });
+      toast.error(`🤦${res}`);
     }
   };
 
