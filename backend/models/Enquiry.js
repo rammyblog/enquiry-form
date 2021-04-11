@@ -6,7 +6,7 @@ const EnquirySchema = new mongoose.Schema({
     required: true,
   },
   email: {
-    type: Email,
+    type: String,
     required: true,
   },
   subject: {
