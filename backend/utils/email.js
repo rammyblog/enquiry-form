@@ -1,5 +1,4 @@
 require("dotenv").config();
-const nodemailer = require("nodemailer");
 const sgMail = require("@sendgrid/mail");
 
 const sendEmail = async (emailOptions) => {
@@ -18,7 +17,7 @@ const sendEmailOptions = ({ email, subject, name, message }) => {
     from: process.env.EMAIL, // sender address
     to: email, // list of receivers
     subject: `${subject} - [MERN Enquiry form]`, // Subject line
-    html: "<p>We received your enquiry!🎉.</p>", // plain text body
+    html: `<p>We received your enquiry!🎉.</p> <p>Sender: ${name}</p> <p>email: ${email}</p> <p>Subject: ${subject}</p> <p>Message: ${message}</p>`, // plain text body
   };
 
   const receiverMailOptions = {
