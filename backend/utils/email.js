@@ -1,21 +1,16 @@
+require("dotenv").config();
 const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail");
 
-const sendEmail = (emailOptions) => {
-  const transporter = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
-    auth: {
-      user: process.env.USER,
-      pass: process.env.PASSWORD,
-    },
-  });
-  transporter.sendMail(emailOptions, function (err, info) {
-    if (err) {
-      throw Error(err);
-    } else {
-      console.log(info);
-    }
-  });
+const sendEmail = async (emailOptions) => {
+  console.log(process.env.SENDGRID_API_KEY);
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  try {
+    await sgMail.send(emailOptions);
+    console.log("Email sent");
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const sendEmailOptions = ({ email, subject, name, message }) => {
